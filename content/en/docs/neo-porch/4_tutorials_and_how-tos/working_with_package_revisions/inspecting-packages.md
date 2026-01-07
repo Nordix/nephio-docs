@@ -46,6 +46,8 @@ blueprints.nginx.main            nginx              main            5          t
 blueprints.postgres.v1           postgres           v1              0          false    Proposed    blueprints
 ```
 
+<span style="color:red">porch-test.my-first-package.v1 package name can be used here, so that there is no need to recreated the packages again. Can add newer/different packages alone with that</span>
+
 **Understanding the output:**
 
 - **NAME**: Full package revision identifier following the pattern `repository.([pathnode.]*)package.workspace`
@@ -93,6 +95,7 @@ Get complete details about a specific PackageRevision:
 ```bash
 porchctl rpkg get porch-test.my-app.v1 --namespace default -o yaml
 ```
+<span style="color:red">porch-test.my-first-package.v1 package name can be used here, so that there is no need to recreated the packages again. Can add newer/different packages alone with that</span>
 
 **What this does:**
 

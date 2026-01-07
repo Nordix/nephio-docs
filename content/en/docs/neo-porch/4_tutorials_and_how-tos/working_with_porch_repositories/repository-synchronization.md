@@ -9,6 +9,9 @@ description: "Synchronizing repositories guide in Porch"
 
 Porch periodically synchronizes with registered repositories to discover new packages and updates. You can also trigger manual synchronization when you need immediate updates.
 
+<span style="color:red">Any need to mention the created lifecycle state of packagerevision?</span>
+
+
 {{% alert title="Note" color="primary" %}}
 **Sync Schedule Format:** Cron expressions follow the format `minute hour day month weekday`. For example, `*/10 * * * *` means "every 10 minutes".
 {{% /alert %}}

@@ -32,7 +32,9 @@ PackageRevisions are Kubernetes resources that represent versioned collections o
 - **Content Management**: `pull`, `push` - Move PackageRevision content between Git repositories and local filesystem
 - **Lifecycle Management**: `propose`, `approve`, `reject` - Control PackageRevision workflow states
 - **Upgrading**: `upgrade` - Create new revision upgrading downstream to more recent upstream package
+<span style="color:red">Updates the upstreamlock automatically or upgrade is not possible with upstreamlock?</span>
 - **Deletion**: `propose-delete`, `del` - Propose deletion of published PackageRevisions, then delete them
+<span style="color:red">deletion can be proposed from any state or only from Published?</span>
 
 ---
 
@@ -53,7 +55,7 @@ PackageRevisions follow a structured lifecycle with three main states:
 **Additional States:**
 
 - **DeletionProposed**: PackageRevision marked for deletion, pending approval
-
+<span style="color:red">Any state pre-requisite?</span>
 ---
 
 ## PackageRevision Naming
@@ -119,7 +121,9 @@ PackageRevisions are stored in Git repositories registered with Porch:
 **Repository Types:**
 
 - **Blueprint Repositories**: Contain upstream package templates for cloning
+<span style="color:red">Blueprint repositories sync'ed automatically? what happens if there is any change in blueprint repo</span>
 - **Deployment Repositories**: Store deployment-ready packages (marked with `--deployment` flag)
+<span style="color:red">What happens when someone edit the configuration manually in git (deployment repository). Is that not allowed or porch syncs those changes? Even if porch tries to synchronize that, which is considered as source of truth, the CR/DB cache or the changes from deployment repository</span>
 
 **Synchronization:**
 
@@ -177,6 +181,7 @@ Important terms and concepts for working with PackageRevisions:
 
 - **PackageRevision**: The Kubernetes resource managed by Porch (there is no separate "Package" resource)
 - **Workspace**: Unique identifier for a PackageRevision within a package (maps to Git branch/tag)
+<span style="color:red">is workspace="v"+revision number?</span>
 - **Lifecycle**: Current state of the PackageRevision (Draft, Proposed, Published, DeletionProposed)
 - **Revision Number**: 0 for Draft/Proposed, 1+ for Published (increments with each publication)
 - **Latest**: Flag indicating the most recent published PackageRevision of a package

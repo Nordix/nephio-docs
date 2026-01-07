@@ -96,6 +96,7 @@ porchctl rpkg copy \
   --namespace default \
   --workspace v2
 ```
+<span style="color:red">my-app required ?</span>
 
 **What this does:**
 

@@ -1,6 +1,6 @@
 module github.com/nephio-project/docs
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/google/docsy v0.12.0 // indirect

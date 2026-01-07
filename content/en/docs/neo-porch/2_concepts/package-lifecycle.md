@@ -18,4 +18,8 @@ The typical lifecycle of a package is as follows:
     *   **Rejected:** If changes are required, the package is rejected. The user must pull the package, make the necessary modifications, and re-propose it for another review.
 4.  **Published:** After approval, the package is published. Published packages are considered stable and are available for deployment and consumption by other systems or clusters. They typically become the "latest" version of a package.
 
+<span style="color:red">Is package lifecycle different from package revision lifecycle. Missing  DeletionPropsed here?</span>
+<br/>
+<span style="color:red">Is Rejected final state of the package revision? So the modification will be a new package revision with Draft stage or Rejected -> Proposed can be done in same package revision. - Answered in Theoritical concepts</span>
+
 ![Flowchart](/static/images/porch/flowchart.drawio.svg)

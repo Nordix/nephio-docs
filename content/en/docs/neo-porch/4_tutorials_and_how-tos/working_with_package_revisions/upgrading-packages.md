@@ -29,6 +29,8 @@ This example demonstrates the complete process of creating, customizing, and upg
 
 Create the initial revision of our blueprint. This will be the "upstream" source for our deployment package.
 
+<span style="color:red">porch-demo namespace is new and no create command has been given earlier and porch-test repository in "default" namespace. Ask to create the repository ?</span>
+
 ```bash
 # Initialize a new package draft named 'blueprint' in the 'porch-test' repository
 porchctl rpkg init blueprint --namespace=porch-demo --repository=porch-test --workspace=1

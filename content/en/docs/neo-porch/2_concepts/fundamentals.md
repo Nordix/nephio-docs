@@ -37,7 +37,7 @@ revision may be in one of several lifecycle stages:
   * ***Published*** - the changes to the package have been approved and the package is ready to be used. Published packages
     may be deployed, cloned to a new package, or edited to continue development.
   * ***DeletionProposed*** - intermediate state. A user has proposed that this package revision be deleted from the
-    repository.
+    repository. <span style="color:red">What happens after deletionproposed. No lifecycle state to show deleted or it will be removed fully. Should refer the package lifecycle for this</span>.
 
 * ***Functions***: specifically, [KRM functions](https://github.com/kubernetes-sigs/kustomize/blob/master/cmd/config/docs/api-conventions/functions-spec.md).
   Functions can be added to a package's kptfile [pipeline](https://kpt.dev/book/04-using-functions/#declarative-function-execution)
@@ -50,6 +50,7 @@ revision may be in one of several lifecycle stages:
   of the upstream package is published. Package variant sets enable the same behaviour for package variants themselves.
   Use of package variants involves advanced concepts worthy of their own separate document:
   [Package Variants]({{% relref "/docs/neo-porch/5_architecture_and_components/controllers/packagevariant.md" %}})
+  <span style="color:red">Not sure PV and PVS has identical configuration, if not it can be considered to be describe as a separate topics</span>
 
 
 In addition, some terms may be used with specific qualifiers, frequently enough to count them as sub-concepts:
@@ -60,12 +61,17 @@ package revision from which it was cloned. [More details]({{% relref "/docs/neo-
 
 * ***Deployment repository***: a repository can be designated as a deployment repository. Package revisions in *Published*
 state in a deployment repository are considered [deployment-ready]({{% relref "/docs/neo-porch/2_concepts/theory.md#deployment-mechanism" %}}).
+<span style="color:red">It look deployment repository is a special version of repository. When should the repository is considered or designated as deployment repository and why? - Answered in Theoretical Concepts - Repository Management</span>
 
 * ***Package revision workspace***, or `workspaceName`: a user-defined string and element of package revision names automatically
 assembled by Porch. Used to uniquely identify a package revision while in *Draft* state, especially to distinguish between
 multiple drafts undergoing concurrent development. **N.B.**: a package revision workspace does not refer to any distinct
 "folder" or "space", but only to the in-development draft. The same workspace name may be assigned to multiple package
 revisions **of different packages** and **does not of itself indicate any connection between the packages**.
+<span style="color:red">Where user can define the workspace name?</span>
+<span style="color:red">workspace name doesn't point to any distinct folder or space. In that how porch maintains the package details with workspace name. In Git ? </span>
+<span style="color:red">What happens to workspace name after draft? - Answered in PackageRevision Naming.</span>
+
 
 ## Core Concepts Elaborated
 
@@ -93,6 +99,8 @@ Any repositories registered must be capable of storing the following minimum dat
   * Package lifecycle state (draft, proposed, published).
   * Package purpose (base package).
   * Customer-defined attributes (optionally).
+
+<span style="color:red">Anything to add about deployment repository?</span>
 
 ### Package Revisions
 

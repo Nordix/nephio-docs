@@ -81,6 +81,7 @@ Porch's repository management functionality enables the client to manage Porch r
 
 * Register (create) and unregister (delete) repositories.
   * A repository may be registered as a *deployment* repository to indicate that it contains deployment-ready packages.
+    <span style="color:red">Are deployment repositories are read-only?</span>
 * Discover (read) and update registered repositories.
   * Since Porch repositories are Kubernetes objects, the update operation may be used to add arbitrary metadata, in the
     form of annotations or labels, for the benefit of applications or customers.
@@ -99,7 +100,10 @@ Porch's package discovery functionality enables the client to read package data:
     date.
 * Retrieve details of an individual package revision.
 * Discover upstream packages with new latest revisions to which their downstream packages can be upgraded.
+<span style="color:red">Is this optional? or by default all upstream packages are monitored for the changes?</span>
+<span style="color:red">What happens when there is an upstream changes. It will be draft package revision or published by default(I don't think it should publish)</span>
 * Identify deployment-ready packages that are available to be deployed by the chosen deployment software.
+<span style="color:red">What is deployment software? Flux/Argo CD ?</span>
 
 ### Package Authoring
 

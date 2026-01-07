@@ -215,6 +215,8 @@ NAME                                    PACKAGE                  WORKSPACENAME  
 porch-test.test-published-package.main  test-published-package   main            -1         false    Published   porch-test
 ```
 
+<span style="color:red">What happens to the latest flag after deletion. Will it be moved to previous version or it gets removed and nothing is latest?</span>
+
 ---
 
 ## Step 5b: Reject Deletion Proposal (Alternative)
